@@ -1,0 +1,13 @@
+{
+  "name": "bible-helper-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eugen Istoc <eugenistoc@gmail.com> (http://eugenistoc.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "0.18.0",
+    "element-ui": "2.3.3",
+    "hapi": "17.3.1",
+    "vue2-filters": "0.3.0"
+  }
+}

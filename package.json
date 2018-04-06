@@ -1,0 +1,16 @@
+{
+  "name": "bible-helper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eugen Istoc <eugenistoc@gmail.com> (http://eugenistoc.com/)",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "cd server && yarn start",
+    "start:app": "cd app && yarn dev",
+    "start": "run-p start:*",
+    "build": ""
+  },
+  "dependencies": {
+    "npm-run-all": "4.1.2"
+  }
+}
