@@ -15,7 +15,7 @@
     "build:mac": "cd app && yarn build:darwin",
     "clean:build": "cd app && yarn build:clean",
     "clean:releases": "rm -rf releases && mkdir releases",
-    "build": "run-s clean build:mac build:dmg",
+    "build:app": "run-s clean build:mac build:dmg",
     "clean": "run-p clean:*"
   },
   "dependencies": {
