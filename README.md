@@ -2,7 +2,7 @@
 
 A simple scripture reference lookup tool
 
-![](screenshot.png)
+![](screenshot.png | width=100)
 
 #### Developing
 
