@@ -5,9 +5,11 @@
   "author": "Eugen Istoc <eugenistoc@gmail.com> (http://eugenistoc.com/)",
   "license": "MIT",
   "scripts": {
+    "install:server": "cd server && yarn",
     "start:server": "cd server && yarn start",
     "start:app": "cd app && yarn dev",
     "div": "run-p start:*",
+    "postinstall": "rub-s install:server",
     "start": "run-s start:server",
     "build": ""
   },
