@@ -6,7 +6,6 @@ A simple scripture reference lookup tool
 
 [DOWNLOAD](https://github.com/genu/bible-helper/releases/download/v1.0.0/bible-helper.dmg) (MAC)
 
-NOTE: You have to right-click on the binary and click `open` to execute it
 
 ## Developing
 
