@@ -9,7 +9,7 @@
     "start:server": "cd server && yarn start",
     "start:app": "cd app && yarn dev",
     "div": "run-p start:*",
-    "postinstall": "rub-s install:server",
+    "postinstall": "run-s install:server",
     "start": "run-s start:server",
     "build": ""
   },
