@@ -27,6 +27,7 @@
                 div(v-for="partial in passage.passages"): p(v-html="partial")
         Footer: Row
             Col(span="12"): a(href="#" @click.prevent="openCopyright" target="_blank") ESV
+            Col(span="12"): a(href="#" @click.prevent="exit"): Icon.pull-right(type="power" size="20")
             //- Col(span="12"): a(href="#" @click="about"): Icon.pull-right(type="gear-b" size="20")
 </template>
 
@@ -107,7 +108,7 @@ body {
 
 <script>
 import axios from "axios";
-import { shell } from "electron";
+import { shell, remote } from "electron";
 import openAboutWindow from "about-window";
 import { debounce, isEmpty } from "lodash";
 
@@ -125,6 +126,9 @@ export default {
     }
   },
   methods: {
+    exit() {
+      remote.process.exit(1);
+    },
     about() {
       openAboutWindow({
         icon_path: "assets/logo.png",
