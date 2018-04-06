@@ -136,7 +136,7 @@ export default {
     },
     search(query) {
       this.isLoading = true;
-      axios.get(`http://localhost:8000/query=${query}`).then(res => {
+      axios.get(`${process.env.endpoint}/query=${query}`).then(res => {
         if (!isEmpty(res.data.canonical)) {
           this.passages.push(res.data);
           this.isLoading = false;
