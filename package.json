@@ -7,7 +7,8 @@
   "scripts": {
     "start:server": "cd server && yarn start",
     "start:app": "cd app && yarn dev",
-    "start": "run-p start:*",
+    "div": "run-p start:*",
+    "start": "run-s start:server",
     "build": ""
   },
   "dependencies": {

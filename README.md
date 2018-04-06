@@ -4,7 +4,7 @@ A simple scripture reference lookup tool
 
 <img src="screenshot.png" width="400"/>
 
-#### Developing
+## Developing
 
 ``` bash
 # install dependencies
