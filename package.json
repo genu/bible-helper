@@ -12,6 +12,7 @@
     "postinstall": "run-s install:server",
     "start": "run-s start:server",
     "build:dmg": "appdmg ./dmg.json ./releases/bible-helper.dmg",
+    "build:windows": "echo Widows builds not available yet",
     "build:mac": "cd app && yarn build:darwin",
     "clean:build": "cd app && yarn build:clean",
     "clean:releases": "rm -rf releases && mkdir releases",
