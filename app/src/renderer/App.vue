@@ -1,17 +1,13 @@
 <template lang="pug">
-  Layout
-    Row.fixed
+  Layout: Row.fixed
       Col(span="24"): div: div.arrow-up
-      Col(span="24")
-        Header
+      Col(span="24"): Header
           a(@click="passages = []" v-if="passages.length > 0"): Icon(type="ios-trash" size="20")
           Input(v-model="query" @keyup.enter.native="search(query)" placeholder="Enter a Bible reference (e.g. John 3:16)")
           Spin(type="small" v-if="isLoading")
       Col(span="24")
-        Content
-          Row
-            Col(span="24" v-if="reversedPassages.length === 0")
-              Alert(show-icon)
+        Content: Row
+            Col(span="24" v-if="reversedPassages.length === 0"): Alert(show-icon)
                 | Examples
                 template(slot="desc"): p
                   i Jn11.35
