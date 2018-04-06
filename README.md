@@ -4,6 +4,7 @@ A simple scripture reference lookup tool
 
 <img src="screenshot.png" width="400"/>
 
+[DOWNLOAD](https://github.com/genu/bible-helper/releases/download/v1.0.0/bible-helper.dmg) (MAC)
 ## Developing
 
 ``` bash
