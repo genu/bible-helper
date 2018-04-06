@@ -11,9 +11,17 @@
     "dev": "run-p start:*",
     "postinstall": "run-s install:server",
     "start": "run-s start:server",
-    "build": "cd app && yarn build"
+    "build:dmg": "appdmg ./dmg.json ./releases/bible-helper.dmg",
+    "build:mac": "cd app && yarn build:darwin",
+    "clean:build": "cd app && yarn build:clean",
+    "clean:releases": "rm -rf releases && mkdir releases",
+    "build": "run-s clean build:mac build:dmg",
+    "clean": "run-p clean:*"
   },
   "dependencies": {
     "npm-run-all": "4.1.2"
+  },
+  "devDependencies": {
+    "appdmg": "0.5.2"
   }
 }
