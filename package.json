@@ -1,15 +1,16 @@
 {
   "name": "bible-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "author": "Eugen Istoc <eugenistoc@gmail.com> (http://eugenistoc.com/)",
   "license": "MIT",
   "scripts": {
+    "install:app": "cd app && yarn",
     "install:server": "cd server && yarn",
     "start:server": "cd server && yarn start",
     "start:app": "cd app && yarn dev",
     "dev": "run-p start:*",
-    "postinstall": "run-s install:server",
+    "postinstall": "run-p install:*",
     "start": "run-s start:server",
     "build:dmg": "appdmg ./dmg.json ./releases/bible-helper.dmg",
     "build:windows": "echo Widows builds not available yet",
