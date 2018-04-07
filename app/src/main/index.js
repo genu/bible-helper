@@ -1,6 +1,6 @@
 "use strict";
 
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, globalShortcut } from "electron";
 import path from "path";
 import menubar from "menubar";
 import { extend } from "lodash";
@@ -35,6 +35,8 @@ extend(menu_options, {
 
 const Menu = menubar(menu_options);
 
+let menuOpen = false;
+
 // Events
 Menu.on("show", () => {
   Menu.window.webContents.send("show");
@@ -45,3 +47,15 @@ app.on("window-all-closed", () => {
     app.quit();
   }
 });
+
+app.on("ready", () => {
+  globalShortcut.register('Command+Shift+E', () => {
+    menuOpen ? Menu.hideWindow() : Menu.showWindow();
+    menuOpen = !menuOpen
+  })
+});
+
+app.on('will-quit', () => {
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll()
+})

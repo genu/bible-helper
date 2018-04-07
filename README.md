@@ -2,6 +2,8 @@
 
 A simple scripture reference lookup tool
 
+Keyboard shortcut: `Command+Shift+E`
+
 <img src="screenshot.png" width="400"/>
 
 [DOWNLOAD](https://github.com/genu/bible-helper/releases/download/v1.0.0/bible-helper.dmg) (MAC)
@@ -13,7 +15,7 @@ A simple scripture reference lookup tool
 # install dependencies
 yarn install
 ```
-This project uses [ESV API](https://api.esv.org/) under the hood. You must register for an api authentication token in order to run locally. 
+This project uses [ESV API](https://api.esv.org/) under the hood. You must register for an api authentication token in order to run locally.
 
 Once you get a Auth token, you must create a local config file in `server/config/local.js` (Don't worry, this file is ignored by git) with the following contents:
 
