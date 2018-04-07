@@ -30,7 +30,7 @@ server.route({
           "include-footnotes": false,
           "include-short-copyright": false
         },
-        headers: { Authorization: process.env.token || config.token }
+        headers: { Authorization: `Token ${process.env.token || config.token}`}
       })
       .then(res => {
         text = res.data;
