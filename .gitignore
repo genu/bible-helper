@@ -3,3 +3,4 @@ server/node_modules
 server/config/local.js
 yarn-error.log
 /releases
+.DS_Store
