@@ -36,8 +36,8 @@ extend(menu_options, {
 const Menu = menubar(menu_options);
 
 // Events
-app.on("ready", () => {
-  Menu.showWindow();
+Menu.on("show", () => {
+  Menu.window.webContents.send("show");
 });
 
 app.on("window-all-closed", () => {

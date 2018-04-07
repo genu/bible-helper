@@ -3,7 +3,7 @@
       Col(span="24"): div: div.arrow-up
       Col(span="24"): Header
           a(@click="passages = []" v-if="passages.length > 0"): Icon(type="ios-trash" size="20")
-          Input(v-model="query" @keyup.enter.native="search(query)" placeholder="Enter a Bible reference (e.g. John 3:16)")
+          Input(ref="query" v-model="query" @keyup.enter.native="search(query)" placeholder="Enter a Bible reference (e.g. John 3:16)")
           Spin(type="small" v-if="isLoading")
       Col(span="24")
         Content: Row
@@ -115,6 +115,11 @@ export default {
       passages: [],
       query: ""
     };
+  },
+  mounted() {
+    this.$electron.ipcRenderer.on("show", () => {
+      this.$refs.query.$el.children[1].focus();
+    });
   },
   computed: {
     reversedPassages() {
