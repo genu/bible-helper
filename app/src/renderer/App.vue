@@ -11,8 +11,9 @@
               Alert(type="warning" show-icon v-if="noResults")
                 em {{cachedQuery}}
                 | &nbsp; was not found!
-              Alert(show-icon v-if="reversedPassages.length === 0")
+              Alert(banner show-icon v-if="reversedPassages.length === 0")
                 | Examples
+                Icon(type="ios-lightbulb-outline" slot="icon")
                 template(slot="desc"): p
                   i Jn11.35
                   br
