@@ -123,8 +123,9 @@ export default {
     };
   },
   mounted() {
+    let _this = this;
     this.$electron.ipcRenderer.on("show", () => {
-      this.$refs.query.$el.children[1].focus();
+      _this.$refs.query.$el.children[1].focus();
     });
   },
   computed: {
