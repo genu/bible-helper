@@ -10,7 +10,7 @@
     "start:server": "cd server && yarn start",
     "start:app": "cd app && yarn dev",
     "dev": "run-p start:*",
-    "postinstall": "run-p install:*",
+    "postinstall": "run-p install:server",
     "start": "run-s start:server",
     "build:dmg": "appdmg ./dmg.json ./releases/bible-helper.dmg",
     "build:windows": "echo Widows builds not available yet",
