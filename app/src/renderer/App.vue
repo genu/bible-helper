@@ -7,7 +7,11 @@
           Spin(type="small" v-if="isLoading")
       Col(span="24")
         Content: Row
-            Col(span="24" v-if="reversedPassages.length === 0"): Alert(show-icon)
+            Col(span="24")
+              Alert(type="warning" show-icon v-if="noResults")
+                em {{cachedQuery}}
+                | &nbsp; was not found!
+              Alert(show-icon v-if="reversedPassages.length === 0")
                 | Examples
                 template(slot="desc"): p
                   i Jn11.35
@@ -113,7 +117,9 @@ export default {
     return {
       isLoading: false,
       passages: [],
-      query: ""
+      query: "",
+      cachedQuery: "",
+      noResults: false
     };
   },
   mounted() {
@@ -144,9 +150,16 @@ export default {
       axios.get(`${process.env.endpoint}/query=${query}`).then(res => {
         if (!isEmpty(res.data.canonical)) {
           this.passages.push(res.data);
-          this.isLoading = false;
           this.query = "";
+        } else if (res.data.passages.length === 0) {
+          this.noResults = true;
+          this.cachedQuery = this.query;
+          setTimeout(() => {
+            this.noResults = false;
+          }, 5000);
         }
+
+        this.isLoading = false;
       });
     }
   }
