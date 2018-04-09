@@ -6,7 +6,7 @@ Keyboard shortcut: `Command+Shift+E`
 
 <img src="screenshot.png" width="400"/>
 
-[DOWNLOAD](https://github.com/genu/bible-helper/releases/download/v1.0.2/bible-helper.dmg) (MAC)
+[DOWNLOAD](https://github.com/genu/bible-helper/releases/download/v1.0.3/bible-helper.dmg) (MAC)
 
 
 ## Developing
