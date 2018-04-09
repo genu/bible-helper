@@ -1,6 +1,6 @@
 {
   "name": "bible-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "Eugen Istoc <eugenistoc@gmail.com> (http://eugenistoc.com/)",
   "license": "MIT",
