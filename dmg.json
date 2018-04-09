@@ -1,6 +1,6 @@
 {
   "title": "Bible Helper",
-  "icon": "app/src/renderer/assets/logo.png",
+  "icon": "app/static/logo.png",
   "contents": [
     {
       "x": 448,

@@ -5,17 +5,6 @@ import path from "path";
 import menubar from "menubar";
 import { extend } from "lodash";
 
-let menu_options = {
-  alwaysOnTop: false,
-  preloadWindow: true,
-  icon: path.join(__dirname, "../renderer/assets/logo.png"),
-  y: 25,
-  width: 450,
-  height: 600,
-  transparent: true,
-  tooltip: "Bible Helper"
-};
-
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -25,6 +14,17 @@ if (process.env.NODE_ENV !== "development") {
     .join(__dirname, "/static")
     .replace(/\\/g, "\\\\");
 }
+
+let menu_options = {
+  alwaysOnTop: false,
+  preloadWindow: true,
+  icon: path.join(__static, "logo.png"),
+  y: 25,
+  width: 450,
+  height: 600,
+  transparent: true,
+  tooltip: "Bible Helper"
+};
 
 extend(menu_options, {
   index:
@@ -49,13 +49,13 @@ app.on("window-all-closed", () => {
 });
 
 app.on("ready", () => {
-  globalShortcut.register('Command+Shift+E', () => {
+  globalShortcut.register("Command+Shift+E", () => {
     menuOpen ? Menu.hideWindow() : Menu.showWindow();
-    menuOpen = !menuOpen
-  })
+    menuOpen = !menuOpen;
+  });
 });
 
-app.on('will-quit', () => {
+app.on("will-quit", () => {
   // Unregister all shortcuts.
-  globalShortcut.unregisterAll()
-})
+  globalShortcut.unregisterAll();
+});
